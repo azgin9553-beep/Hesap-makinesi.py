@@ -1,0 +1,134 @@
+# Hesap-makinesi.py
+# 🧮 Python Hesap Makinesi
+
+Basit, hızlı ve kullanımı kolay bir Python hesap makinesi.
+
+## 🚀 Özellikler
+
+- ➕ Toplama
+- ➖ Çıkarma
+- ✖️ Çarpma
+- ➗ Bölme
+- 🔢 Üs Alma
+- √ Karekök
+- 📊 Mod Alma
+- ❌ 0'a bölme hatasını kontrol eder.
+- 🔄 Sürekli çalışan menü sistemi.
+
+## 📦 Gereksinimler
+
+- Python 3.x
+
+## ▶️ Kurulum
+
+1. Depoyu indirin veya klonlayın.
+
+```bash
+git clone https://github.com/kullaniciadi/python-hesap-makinesi.git
+```
+
+2. Proje klasörüne girin.
+
+```bash
+cd python-hesap-makinesi
+```
+
+3. Programı çalıştırın.
+
+```bash
+python hesap_makinesi.py
+```
+
+## 📷 Ekran Görüntüsü
+
+```text
+===================================
+      🧮 PYTHON HESAP MAKİNESİ
+===================================
+1 - Toplama
+2 - Çıkarma
+3 - Çarpma
+4 - Bölme
+5 - Üs Alma
+6 - Karekök
+7 - Mod
+0 - Çıkış
+===================================
+```
+
+## 📄 Lisans
+
+Bu proje eğitim amaçlı hazırlanmıştır. İstediğiniz gibi kullanabilir ve geliştirebilirsiniz.
+
+---
+
+⭐ Projeyi beğendiyseniz yıldız vermeyi unutmayın!
+
+
+
+
+
+
+
+
+
+import math
+import os
+
+while True:
+    os.system("cls" if os.name == "nt" else "clear")
+
+    print("=" * 35)
+    print("     🧮 PYTHON HESAP MAKİNESİ")
+    print("=" * 35)
+    print("1 - Toplama (+)")
+    print("2 - Çıkarma (-)")
+    print("3 - Çarpma (*)")
+    print("4 - Bölme (/)")
+    print("5 - Üs Alma (^)")
+    print("6 - Karekök (√)")
+    print("7 - Mod (%)")
+    print("0 - Çıkış")
+    print("=" * 35)
+
+    secim = input("Seçimin: ")
+
+    if secim == "0":
+        print("Program kapatıldı.")
+        break
+
+    if secim == "6":
+        sayi = float(input("Sayı: "))
+        if sayi < 0:
+            print("Negatif sayının karekökü alınamaz!")
+        else:
+            print("Sonuç:", math.sqrt(sayi))
+    else:
+        s1 = float(input("1. Sayı: "))
+        s2 = float(input("2. Sayı: "))
+
+        if secim == "1":
+            print("Sonuç:", s1 + s2)
+
+        elif secim == "2":
+            print("Sonuç:", s1 - s2)
+
+        elif secim == "3":
+            print("Sonuç:", s1 * s2)
+
+        elif secim == "4":
+            if s2 == 0:
+                print("0'a bölünemez!")
+            else:
+                print("Sonuç:", s1 / s2)
+
+        elif secim == "5":
+            print("Sonuç:", s1 ** s2)
+
+        elif secim == "7":
+            print("Sonuç:", s1 % s2)
+
+        else:
+            print("Geçersiz seçim!")
+
+    input("\nDevam etmek için Enter'a bas...")
